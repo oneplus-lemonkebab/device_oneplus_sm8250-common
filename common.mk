@@ -335,7 +335,8 @@ PRODUCT_PACKAGES += \
     TelephonyResCommon \
     WifiResCommon \
     OPlusWifiResCommon \
-    WifiResTarget
+    WifiResTarget \
+    SettingsOverlayRefreshRate
 
 # Partition
 PRODUCT_BUILD_SUPER_PARTITION := false
