@@ -242,6 +242,20 @@ on boot
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
+    # Edge Touch
+    chown system system /proc/touchpanel/oplus_tp_direction
+    chown system system /proc/touchpanel/oplus_tp_limit_enable
+    chown system system /proc/touchpanel/oplus_tp_limit_whitelist
+    chown system system /proc/touchpanel/tpedge_limit_enable
+    chmod 0666 /proc/touchpanel/oplus_tp_direction
+    chmod 0666 /proc/touchpanel/oplus_tp_limit_enable
+    chmod 0666 /proc/touchpanel/oplus_tp_limit_whitelist
+    chmod 0666 /proc/touchpanel/tpedge_limit_enable
+    write /proc/touchpanel/oplus_tp_direction 1
+    write /proc/touchpanel/oplus_tp_limit_enable 1
+    write /proc/touchpanel/oplus_tp_limit_whitelist 1
+    write /proc/touchpanel/tpedge_limit_enable 1
+
 on property:sys.boot_completed=1
     copy /vendor/etc/Oppo_QC_LTM_Commercial_2020_01_03.pfm /mnt/vendor/persist/data/pfm/licenses/1000-1000-no-exp-958228818.pfm
     chmod 0600 /mnt/vendor/persist/data/pfm/licenses/1000-1000-no-exp-958228818.pfm
